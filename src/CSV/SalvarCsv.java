@@ -9,7 +9,7 @@ import Models.Funcionario;
 import Models.Produto;
 
 public class SalvarCsv {
-    public void salvarProdutosEmCSV(List<Produto> produtos) {
+    public String salvarProdutosEmCSV(List<Produto> produtos) {
         try {
             FileWriter arquivo = new FileWriter("src/Banco de Dados/BD.csv", true); // O segundo argumento "true" permite adicionar ao arquivo existente
             BufferedWriter escritor = new BufferedWriter(arquivo);
@@ -32,15 +32,15 @@ public class SalvarCsv {
             escritor.close();
             arquivo.close();
 
-            System.out.println("Produtos adicionados ao arquivo CSV em src/Banco de Dados/BD.csv");
+            return "Produtos adicionados ao arquivo CSV em src/Banco de Dados/BD.csv";
 
         } catch (IOException e) {
             e.printStackTrace();
-            System.err.println("Erro ao salvar os produtos em CSV: " + e.getMessage());
+            return "Erro ao salvar os produtos em CSV: " + e.getMessage();
         }
     }
 
-    public void salvarFuncionariosEmCSV(List<Funcionario> funcionarios) {
+    public String salvarFuncionariosEmCSV(List<Funcionario> funcionarios) {
         try {
             FileWriter arquivo = new FileWriter("src/Banco de Dados/Funcionarios.csv", true); // O segundo argumento "true" permite adicionar ao arquivo existente
             BufferedWriter escritor = new BufferedWriter(arquivo);
@@ -60,11 +60,11 @@ public class SalvarCsv {
             escritor.close();
             arquivo.close();
 
-            System.out.println("Funcionarios adicionados ao arquivo CSV em src/Banco de Dados/Funcionarios.csv");
+            return "Funcionarios adicionados ao arquivo CSV em src/Banco de Dados/Funcionarios.csv";
 
         } catch (IOException e) {
             e.printStackTrace();
-            System.err.println("Erro ao salvar os Funcionarios em CSV: " + e.getMessage());
+            return "Erro ao salvar os Funcionarios em CSV: " + e.getMessage();
         }
     }
 }

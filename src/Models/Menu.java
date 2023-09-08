@@ -78,11 +78,12 @@ public class Menu {
             break;
             
             case 0:
-
-            excluir.excluirConteudoProdutoCsv();
-            excluir.excluirConteudoFuncionarioCsv();
-            salvarCsv.salvarProdutosEmCSV(produtosRepository.getProdutoCadastrados());
-            salvarCsv.salvarFuncionariosEmCSV(funcionariosRepository.getLista());
+            System.out.println("\n---------------------------------------------------------------------------------");
+            System.out.println("- " + excluir.excluirConteudoProdutoCsv());
+            System.out.println("- " + excluir.excluirConteudoFuncionarioCsv());
+            System.out.println("- " + salvarCsv.salvarProdutosEmCSV(produtosRepository.getProdutoCadastrados()));
+            System.out.println("- " + salvarCsv.salvarFuncionariosEmCSV(funcionariosRepository.getLista()));
+            System.out.println("---------------------------------------------------------------------------------\n");
             System.exit(0);
             break;
             
