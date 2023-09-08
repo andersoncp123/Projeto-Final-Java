@@ -68,7 +68,6 @@ public class LeituraCsv {
         } catch (IOException e) {
             System.out.println("ERROR: " + e.getMessage());
         }
-
     }
 
     public List<Funcionario> getFuncionario() {
